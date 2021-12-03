@@ -1,0 +1,61 @@
+﻿@model IEnumerable<DataLayer.Model.Wage>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.In_Out)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Conversation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Operator.Title)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+            @if (item.In_Out == false)
+            {
+                <td>
+                    OUT
+                </td>
+            }
+            else
+            {
+                <td>
+                    IN
+                </td>   
+            }
+            @*@Html.DisplayFor(modelItem => item.In_Out)*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Conversation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Operator.Title)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.WageID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.WageID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.WageID })
+        </td>
+    </tr>
+}
+
+</table>

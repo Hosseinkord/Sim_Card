@@ -1,0 +1,51 @@
+﻿@model IEnumerable<DataLayer.Model.PersonSimCard>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SimID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JoinDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Charge)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SimID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JoinDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Charge)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PersonSimID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PersonSimID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PersonSimID })
+        </td>
+    </tr>
+}
+
+</table>

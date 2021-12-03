@@ -1,0 +1,50 @@
+﻿@model DataLayer.Model.Wage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Wage</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.In_Out)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.In_Out)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Conversation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Conversation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Operator.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Operator.Title)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WageID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

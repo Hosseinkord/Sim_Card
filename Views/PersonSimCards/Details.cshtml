@@ -1,0 +1,50 @@
+﻿@model DataLayer.Model.PersonSimCard
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PersonSimCard</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SimID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SimID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JoinDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JoinDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Charge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Charge)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PersonSimID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

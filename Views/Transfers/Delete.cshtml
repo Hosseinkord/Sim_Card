@@ -1,0 +1,48 @@
+﻿@model DataLayer.Model.Transfer
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Transfer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SimCardID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SimCardID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TransferDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TransferDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
